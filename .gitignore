@@ -1,6 +1,6 @@
 .env
-app.py
-script.js
+
+
 
 *.pyc
 __pycache__/
