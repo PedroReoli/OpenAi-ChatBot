@@ -258,8 +258,3 @@ Copyright © 2025 Pedro Reoli
 
 ---
 
-<div align="center">
-
-**[⬆ Voltar ao topo](#-openai-chatbot-avançado)**
-
-</div>
