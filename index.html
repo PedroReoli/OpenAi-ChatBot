@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced OpenAI Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Advanced OpenAI Chatbot</h2>
+            <div class="nav-buttons">
+                <button id="new-chat">New Chat</button>
+                <button id="view-history">View History</button>
+                <button id="train-model">Train Model</button>
+            </div>
+            <div class="user-info">
+                <input type="text" id="user-id" placeholder="Enter User ID">
+                <button id="set-user">Set User</button>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div id="chat-container">
+                <div id="chat-messages"></div>
+                <div class="input-area">
+                    <textarea id="user-input" placeholder="Type your message here..."></textarea>
+                    <button id="send-button">Send</button>
+                </div>
+            </div>
+            
+            <div id="history-container" class="hidden">
+                <h3>Conversation History</h3>
+                <div id="history-list"></div>
+                <button id="back-to-chat">Back to Chat</button>
+            </div>
+            
+            <div id="training-container" class="hidden">
+                <h3>Train Your Chatbot</h3>
+                <div class="training-example">
+                    <div class="example-pair">
+                        <textarea class="example-input" placeholder="Example input..."></textarea>
+                        <textarea class="example-output" placeholder="Expected output..."></textarea>
+                    </div>
+                </div>
+                <button id="add-example">Add Another Example</button>
+                <button id="submit-training">Submit Training Data</button>
+                <button id="back-from-training">Back to Chat</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+.env
+app.py
+script.js
+
+*.pyc
+__pycache__/
+conversation_history.json
+training_data.json
