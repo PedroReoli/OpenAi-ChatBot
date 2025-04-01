@@ -1,0 +1,32 @@
+[
+  {
+    "role": "user",
+    "content": "ola",
+    "timestamp": 1743534247
+  },
+  {
+    "role": "assistant",
+    "content": "Desculpe, ocorreu um erro ao processar sua solicitação.",
+    "timestamp": 1743534248
+  },
+  {
+    "role": "user",
+    "content": "oi",
+    "timestamp": 1743534412
+  },
+  {
+    "role": "assistant",
+    "content": "Desculpe, ocorreu um erro ao processar sua solicitação.",
+    "timestamp": 1743534412
+  },
+  {
+    "role": "user",
+    "content": "oi",
+    "timestamp": 1743534661
+  },
+  {
+    "role": "assistant",
+    "content": "Desculpe, ocorreu um erro ao processar sua solicitação.",
+    "timestamp": 1743534662
+  }
+]

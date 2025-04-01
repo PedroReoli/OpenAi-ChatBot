@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinamento Avançado - Assistente IA</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="training-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="animated-background">
+        <div class="gradient-sphere sphere-1"></div>
+        <div class="gradient-sphere sphere-2"></div>
+        <div class="gradient-sphere sphere-3"></div>
+        <div class="grid-overlay"></div>
+    </div>
+    
+    <div class="app-container">
+        <!-- Sidebar / Mobile Header -->
+        <div class="sidebar">
+            <div class="logo-container">
+                <div class="logo">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h1>Assistente IA</h1>
+            </div>
+            
+            <div class="sidebar-menu">
+                <a href="index.html" class="menu-button">
+                    <i class="fas fa-comment-alt"></i>
+                    <span>Chat</span>
+                </a>
+                <a href="index.html#history" class="menu-button">
+                    <i class="fas fa-history"></i>
+                    <span>Histórico</span>
+                </a>
+                <a href="training.html" class="menu-button active">
+                    <i class="fas fa-brain"></i>
+                    <span>Treinar IA</span>
+                </a>
+            </div>
+            
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="user-info-container">
+                    <input type="text" id="user-id" placeholder="Definir ID do Usuário">
+                    <button id="set-user">
+                        <i class="fas fa-check"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <div class="content-view">
+                <div class="view-header">
+                    <h2>Treinamento Avançado</h2>
+                    <div class="header-actions">
+                        <button class="action-icon" id="help-button">
+                            <i class="fas fa-question-circle"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="training-dashboard">
+                    <!-- Training Tabs -->
+                    <div class="training-tabs">
+                        <button class="tab-button active" data-tab="examples">
+                            <i class="fas fa-list"></i>
+                            <span>Exemplos</span>
+                        </button>
+                        <button class="tab-button" data-tab="files">
+                            <i class="fas fa-file-upload"></i>
+                            <span>Arquivos</span>
+                        </button>
+                        <button class="tab-button" data-tab="status">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Status</span>
+                        </button>
+                        <button class="tab-button" data-tab="settings">
+                            <i class="fas fa-cog"></i>
+                            <span>Configurações</span>
+                        </button>
+                    </div>
+                    
+                    <!-- Training Content -->
+                    <div class="training-content">
+                        <!-- Examples Tab -->
+                        <div class="tab-content active" id="examples-tab">
+                            <div class="tab-header">
+                                <h3>Exemplos de Treinamento</h3>
+                                <p>Adicione pares de perguntas e respostas para treinar seu assistente.</p>
+                            </div>
+                            
+                            <div class="training-examples">
+                                <div class="example-list" id="example-list">
+                                    <!-- Example pairs will be added here -->
+                                    <div class="example-pair">
+                                        <div class="example-container">
+                                            <label>Entrada do Usuário</label>
+                                            <textarea class="example-input" placeholder="Exemplo: Como está o tempo hoje?"></textarea>
+                                        </div>
+                                        <div class="example-container">
+                                            <label>Resposta Esperada</label>
+                                            <textarea class="example-output" placeholder="Exemplo: Não tenho acesso a dados em tempo real..."></textarea>
+                                        </div>
+                                        <button class="remove-example">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="example-actions">
+                                    <button id="add-example" class="action-button">
+                                        <i class="fas fa-plus"></i>
+                                        Adicionar Exemplo
+                                    </button>
+                                    <button id="submit-examples" class="action-button primary">
+                                        <i class="fas fa-upload"></i>
+                                        Enviar Exemplos
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Files Tab -->
+                        <div class="tab-content" id="files-tab">
+                            <div class="tab-header">
+                                <h3>Upload de Arquivos</h3>
+                                <p>Faça upload de arquivos para treinar seu assistente com conteúdo específico.</p>
+                            </div>
+                            
+                            <div class="file-upload-container">
+                                <div class="file-drop-zone" id="file-drop-zone">
+                                    <div class="drop-zone-content">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <h4>Arraste e solte arquivos aqui</h4>
+                                        <p>ou</p>
+                                        <label for="file-input" class="file-input-label">
+                                            Selecionar Arquivos
+                                        </label>
+                                        <input type="file" id="file-input" multiple accept=".pdf,.html,.txt,.doc,.docx,.csv,.json" class="hidden">
+                                        <p class="file-types">Suporta PDF, HTML, TXT, DOC, DOCX, CSV, JSON</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="file-list-container">
+                                    <h4>Arquivos Selecionados</h4>
+                                    <div class="file-list" id="file-list">
+                                        <!-- Files will be added here -->
+                                    </div>
+                                    
+                                    <div class="file-actions">
+                                        <button id="clear-files" class="action-button">
+                                            <i class="fas fa-trash-alt"></i>
+                                            Limpar Todos
+                                        </button>
+                                        <button id="process-files" class="action-button primary">
+                                            <i class="fas fa-cogs"></i>
+                                            Processar Arquivos
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Status Tab -->
+                        <div class="tab-content" id="status-tab">
+                            <div class="tab-header">
+                                <h3>Status do Treinamento</h3>
+                                <p>Acompanhe o progresso e desempenho do treinamento do seu assistente.</p>
+                            </div>
+                            
+                            <div class="status-dashboard">
+                                <div class="status-cards">
+                                    <div class="status-card">
+                                        <div class="status-icon">
+                                            <i class="fas fa-database"></i>
+                                        </div>
+                                        <div class="status-info">
+                                            <h4>Exemplos Treinados</h4>
+                                            <div class="status-value" id="trained-examples">0</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="status-card">
+                                        <div class="status-icon">
+                                            <i class="fas fa-file-alt"></i>
+                                        </div>
+                                        <div class="status-info">
+                                            <h4>Arquivos Processados</h4>
+                                            <div class="status-value" id="processed-files">0</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="status-card">
+                                        <div class="status-icon">
+                                            <i class="fas fa-check-circle"></i>
+                                        </div>
+                                        <div class="status-info">
+                                            <h4>Precisão Estimada</h4>
+                                            <div class="status-value" id="accuracy">--</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="status-details">
+                                    <h4>Histórico de Treinamento</h4>
+                                    <div class="training-history" id="training-history">
+                                        <!-- Training history will be added here -->
+                                        <div class="empty-state">
+                                            <div class="empty-icon"><i class="fas fa-history"></i></div>
+                                            <div class="empty-title">Sem histórico de treinamento</div>
+                                            <div class="empty-description">Treine seu assistente para ver o histórico aqui.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Settings Tab -->
+                        <div class="tab-content" id="settings-tab">
+                            <div class="tab-header">
+                                <h3>Configurações de Treinamento</h3>
+                                <p>Personalize os parâmetros de treinamento do seu assistente.</p>
+                            </div>
+                            
+                            <div class="settings-form">
+                                <div class="settings-group">
+                                    <h4>Parâmetros do Modelo</h4>
+                                    
+                                    <div class="setting-item">
+                                        <label for="model-type">Modelo Base</label>
+                                        <select id="model-type" class="setting-input">
+                                            <option value="gpt-3.5-turbo">gpt-3.5-turbo (Recomendado)</option>
+                                            <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="setting-item">
+                                        <label for="temperature">Temperatura</label>
+                                        <div class="range-container">
+                                            <input type="range" id="temperature" min="0" max="1" step="0.1" value="0.7" class="range-input">
+                                            <span class="range-value" id="temperature-value">0.7</span>
+                                        </div>
+                                        <p class="setting-description">Controla a aleatoriedade das respostas. Valores mais baixos são mais determinísticos.</p>
+                                    </div>
+                                    
+                                    <div class="setting-item">
+                                        <label for="max-tokens">Tokens Máximos</label>
+                                        <input type="number" id="max-tokens" value="2048" min="1" max="4096" class="setting-input">
+                                        <p class="setting-description">Limite máximo de tokens para as respostas geradas.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="settings-group">
+                                    <h4>Configurações Avançadas</h4>
+                                    
+                                    <div class="setting-item">
+                                        <label for="system-prompt">Prompt do Sistema</label>
+                                        <textarea id="system-prompt" class="setting-input textarea" placeholder="Instruções para definir o comportamento do assistente...">Você é um assistente IA útil, respeitoso e honesto. Sempre responda da maneira mais útil possível, mantendo a segurança em mente.</textarea>
+                                    </div>
+                                    
+                                    <div class="setting-item checkbox">
+                                        <input type="checkbox" id="use-context" checked>
+                                        <label for="use-context">Usar contexto de conversas anteriores</label>
+                                    </div>
+                                    
+                                    <div class="setting-item checkbox">
+                                        <input type="checkbox" id="use-web-search">
+                                        <label for="use-web-search">Habilitar pesquisa na web para respostas atualizadas</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="settings-actions">
+                                    <button id="reset-settings" class="action-button">
+                                        <i class="fas fa-undo"></i>
+                                        Restaurar Padrões
+                                    </button>
+                                    <button id="save-settings" class="action-button primary">
+                                        <i class="fas fa-save"></i>
+                                        Salvar Configurações
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Help Modal -->
+    <div class="modal" id="help-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Guia de Treinamento</h3>
+                <button class="modal-close" id="close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="help-section">
+                    <h4><i class="fas fa-list"></i> Exemplos</h4>
+                    <p>Adicione pares de perguntas e respostas para ensinar seu assistente como responder a consultas específicas. Quanto mais exemplos você fornecer, melhor será o desempenho.</p>
+                </div>
+                
+                <div class="help-section">
+                    <h4><i class="fas fa-file-upload"></i> Arquivos</h4>
+                    <p>Faça upload de documentos para que seu assistente aprenda com conteúdo específico. O sistema extrairá informações relevantes automaticamente.</p>
+                    <ul>
+                        <li><strong>PDF:</strong> Documentos, manuais, artigos</li>
+                        <li><strong>HTML:</strong> Páginas web, documentação</li>
+                        <li><strong>TXT:</strong> Texto simples, notas</li>
+                        <li><strong>DOC/DOCX:</strong> Documentos do Word</li>
+                        <li><strong>CSV/JSON:</strong> Dados estruturados</li>
+                    </ul>
+                </div>
+                
+                <div class="help-section">
+                    <h4><i class="fas fa-chart-line"></i> Status</h4>
+                    <p>Acompanhe o progresso do treinamento e veja estatísticas sobre o desempenho do seu assistente.</p>
+                </div>
+                
+                <div class="help-section">
+                    <h4><i class="fas fa-cog"></i> Configurações</h4>
+                    <p>Personalize parâmetros como temperatura (criatividade), tamanho máximo de resposta e comportamento geral do assistente.</p>
+                </div>
+                
+                <div class="help-section">
+                    <h4>Dicas para um Treinamento Eficaz</h4>
+                    <ul>
+                        <li>Forneça exemplos variados e específicos</li>
+                        <li>Use arquivos de alta qualidade e relevantes</li>
+                        <li>Ajuste as configurações para seu caso de uso</li>
+                        <li>Teste regularmente o assistente após o treinamento</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="training.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistente IA</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="animated-background">
+        <div class="gradient-sphere sphere-1"></div>
+        <div class="gradient-sphere sphere-2"></div>
+        <div class="gradient-sphere sphere-3"></div>
+        <div class="grid-overlay"></div>
+    </div>
+    
+    <div class="app-container">
+        <!-- Sidebar / Mobile Header -->
+        <div class="sidebar">
+            <div class="logo-container">
+                <div class="logo">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h1>Assistente IA</h1>
+            </div>
+            
+            <div class="sidebar-menu">
+                <button id="new-chat" class="menu-button active">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Nova Conversa</span>
+                </button>
+                <button id="view-history" class="menu-button">
+                    <i class="fas fa-history"></i>
+                    <span>Histórico</span>
+                </button>
+                <a href="training.html" class="menu-button">
+                    <i class="fas fa-brain"></i>
+                    <span>Treinar IA</span>
+                </a>
+            </div>
+            
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="user-info-container">
+                    <input type="text" id="user-id" placeholder="Definir ID do Usuário">
+                    <button id="set-user">
+                        <i class="fas fa-check"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Chat View -->
+            <div id="chat-container" class="content-view">
+                <div class="view-header">
+                    <h2>Conversa</h2>
+                    <div class="header-actions">
+                        <button class="action-icon">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <button class="action-icon">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div id="chat-messages" class="messages-container">
+                    <!-- Welcome message -->
+                    <div class="message-wrapper bot-wrapper">
+                        <div class="message-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="message bot-message">
+                            <div class="message-sender">Assistente IA</div>
+                            <div class="message-text">Olá! Como posso ajudar você hoje?</div>
+                            <div class="message-time">Agora</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="input-container">
+                    <div class="input-wrapper">
+                        <button class="input-action">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                        <textarea id="user-input" placeholder="Digite sua mensagem aqui..."></textarea>
+                        <button class="input-action">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                    </div>
+                    <button id="send-button">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- History View -->
+            <div id="history-container" class="content-view hidden">
+                <div class="view-header">
+                    <h2>Histórico de Conversas</h2>
+                    <div class="header-actions">
+                        <button class="action-icon">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div id="history-list" class="history-container">
+                    <!-- History items will be added here -->
+                </div>
+                
+                <div class="view-footer">
+                    <button id="back-to-chat" class="back-button">
+                        <i class="fas fa-arrow-left"></i>
+                        Voltar para Conversa
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
