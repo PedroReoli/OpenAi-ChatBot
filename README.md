@@ -11,7 +11,7 @@
 </div>
 
 <p align="center">
-  <img src="https://sjc.microlink.io/z2qi5KnKNdya4FCzYEgI_ioNtySZjvv3VnZR_fS_hy5UWkLu5AE-SnjGIhgv3KH4oFi_XUrTIS7dabwEEPSE-w.jpeg" alt="OpenAI Chatbot Logo" width="150" height="150" style="border-radius: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+  <img src="gpt.png" alt="OpenAI Chatbot Logo" width="150" height="150" style="border-radius: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
 </p>
 
 > Um chatbot moderno com interface futurista, sistema de treinamento personalizado e suporte ao processamento de arquivos. Desenvolvido com Python, Flask e a API da OpenAI.
