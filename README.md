@@ -250,7 +250,7 @@ Contribuições são bem-vindas! Siga estes passos:
 
 <div align="center">
 
-Este projeto está licenciado sob a [Licença MIT](LICENSE).
+Este projeto está licenciado sob a [Licença MIT].
 
 Copyright © 2025 Pedro Reoli
 
